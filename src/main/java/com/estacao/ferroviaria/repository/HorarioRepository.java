@@ -6,4 +6,6 @@ import com.estacao.ferroviaria.model.Horario;
 
 public interface HorarioRepository extends JpaRepository<Horario, Long>{
 
+	Long countById(Long id);
+
 }

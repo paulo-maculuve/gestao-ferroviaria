@@ -6,4 +6,6 @@ import com.estacao.ferroviaria.model.Passageiro;
 
 public interface PassageiroRepository extends JpaRepository<Passageiro, Long>{
 
+	Long countById(Long id);
+
 }

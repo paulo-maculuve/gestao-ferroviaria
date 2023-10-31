@@ -6,4 +6,6 @@ import com.estacao.ferroviaria.model.Reserva;
 
 public interface ReservaRepository extends JpaRepository<Reserva, Long>{
 
+	Long countById(Long id);
+
 }
