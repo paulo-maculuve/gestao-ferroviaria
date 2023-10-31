@@ -7,24 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.estacao.ferroviaria.exception.TremNotFundException;
-import com.estacao.ferroviaria.model.Trem;
-import com.estacao.ferroviaria.repository.TremRepository;
+import com.estacao.ferroviaria.model.Tren;
+import com.estacao.ferroviaria.repository.TrenRepository;
 
 @Service
 public class TremService {
 	@Autowired
-	private TremRepository tremRepository;
+	private TrenRepository tremRepository;
 
-	public void save(Trem trem) {
+	public void save(Tren trem) {
 		tremRepository.save(trem);
 	}
 
-	public List<Trem> listTrem() {
+	public List<Tren> listTrem() {
 		return tremRepository.findAll();
 	}
 
-	public Trem getCampaign(Long id) throws TremNotFundException {
-		Optional<Trem> trem = tremRepository.findById(id);
+	public Tren getCampaign(Long id) throws TremNotFundException {
+		Optional<Tren> trem = tremRepository.findById(id);
 		if (trem.isPresent()) {
 			return trem.get();
 		}

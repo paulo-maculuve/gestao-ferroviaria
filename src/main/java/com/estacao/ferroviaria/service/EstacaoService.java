@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.estacao.ferroviaria.exception.EstacaoNotFundException;
 import com.estacao.ferroviaria.exception.TremNotFundException;
 import com.estacao.ferroviaria.model.Estacao;
-import com.estacao.ferroviaria.model.Trem;
+import com.estacao.ferroviaria.model.Tren;
 import com.estacao.ferroviaria.repository.EstacaoRepository;
 
 @Service

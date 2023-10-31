@@ -24,7 +24,7 @@ public class Horario {
 
     @OneToOne
     @JoinColumn(name = "trem_id")
-    private Trem trem;
+    private Tren trem;
 
 	public Long getId() {
 		return id;
@@ -58,11 +58,11 @@ public class Horario {
 		this.atraso = atraso;
 	}
 
-	public Trem getTrem() {
+	public Tren getTrem() {
 		return trem;
 	}
 
-	public void setTrem(Trem trem) {
+	public void setTrem(Tren trem) {
 		this.trem = trem;
 	}
 

@@ -3,11 +3,12 @@ package com.estacao.ferroviaria.model;
 import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
+@Entity
 public class Rota {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,7 @@ public class Rota {
     private int tempoEstimadoViagem;
 
     @OneToMany(mappedBy = "rota")
-    private List<Trem> trens;
+    private List<Tren> trens;
 
 	
     public Long getId() {
@@ -65,11 +66,11 @@ public class Rota {
 		this.tempoEstimadoViagem = tempoEstimadoViagem;
 	}
 
-	public List<Trem> getTrens() {
+	public List<Tren> getTrens() {
 		return trens;
 	}
 
-	public void setTrens(List<Trem> trens) {
+	public void setTrens(List<Tren> trens) {
 		this.trens = trens;
 	}
     

@@ -2,9 +2,9 @@ package com.estacao.ferroviaria.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.estacao.ferroviaria.model.Trem;
+import com.estacao.ferroviaria.model.Tren;
 
-public interface TremRepository extends JpaRepository<Trem, Long> {
+public interface TrenRepository extends JpaRepository<Tren, Long> {
 
 	Long countById(Long id);
 

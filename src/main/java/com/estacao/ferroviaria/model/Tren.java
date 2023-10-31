@@ -13,8 +13,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "trem")
-public class Trem {
+public class Tren {
 	@Id
 	@GeneratedValue(strategy  = GenerationType.IDENTITY)
 	private Long id;

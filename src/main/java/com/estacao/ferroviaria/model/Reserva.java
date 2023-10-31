@@ -18,15 +18,13 @@ public class Reserva {
     @Column(nullable = false)
     private Date dataReserva;
     
-    @Column(nullable = false)
     @ManyToOne
     @JoinColumn(name = "passageiro_id")
     private Passageiro passageiro;
 
-    @Column(nullable = false)
     @ManyToOne
     @JoinColumn(name = "trem_id")
-    private Trem trem;
+    private Tren trem;
 
 	public Long getId() {
 		return id;
@@ -52,11 +50,11 @@ public class Reserva {
 		this.passageiro = passageiro;
 	}
 
-	public Trem getTrem() {
+	public Tren getTrem() {
 		return trem;
 	}
 
-	public void setTrem(Trem trem) {
+	public void setTrem(Tren trem) {
 		this.trem = trem;
 	}
     

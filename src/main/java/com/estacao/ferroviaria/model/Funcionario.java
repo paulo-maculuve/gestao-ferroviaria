@@ -22,7 +22,7 @@ public class Funcionario {
 
 	@ManyToOne
 	@JoinColumn(name = "trem_id")
-	private Trem trem;
+	private Tren trem;
 
 	@ManyToOne
 	@JoinColumn(name = "estacao_id")
@@ -60,11 +60,11 @@ public class Funcionario {
 		this.telefone = telefone;
 	}
 
-	public Trem getTrem() {
+	public Tren getTrem() {
 		return trem;
 	}
 
-	public void setTrem(Trem trem) {
+	public void setTrem(Tren trem) {
 		this.trem = trem;
 	}
 
