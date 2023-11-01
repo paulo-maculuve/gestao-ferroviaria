@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Xitimela | Gestão de Estação Ferroviaria</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+    <link rel="icon" th:href="@{favicon.ico}" type="image/x-icon"> <!-- Favicon-->
     <!-- project css file  -->
-    <link rel="stylesheet" href="assets/css/my-task.style.min.css">
+    <link rel="stylesheet" th:href="@{assets/css/my-task.style.min.css}">
 </head>
 
 <body  data-mytask="theme-indigo">
@@ -16,7 +16,7 @@
     <!-- sidebar -->
     <div class="sidebar px-4 py-4 py-md-5 me-0">
         <div class="d-flex flex-column h-100">
-            <a href="index.html" class="mb-0 brand-icon">
+            <a th:href="@{/admin}" class="mb-0 brand-icon">
                 <span class="logo-icon">
                     <svg  width="35" height="35" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
@@ -34,36 +34,71 @@
                         <i class="icofont-home fs-5"></i> <span>Dashboard</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
                     <ul class="sub-menu collapse show" id="dashboard-Components">
-                        <li><a class="ms-link active" href="index.html"> <span>Hr Dashboard</span></a></li>
+                        <li><a class="ms-link active" th:href="@{/admin}"> <span>Hr Dashboard</span></a></li>
                     </ul>
                 </li>
                 <li  class="collapsed">
-                    <a class="m-link"  data-bs-toggle="collapse" data-bs-target="#project-Components" href="#">
+                    <a class="m-link"  data-bs-toggle="collapse" data-bs-target="#funcionario-Components" href="#">
                         <i class="icofont-briefcase"></i><span>Funcionario</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="project-Components">
-                        <li><a class="ms-link" href="projects.html"><span>Funcionarios</span></a></li>
+                    <ul class="sub-menu collapse" id="funcionario-Components">
+                        <li><a class="ms-link" th:href="@{/admin/funcionario}"><span>Funcionarios</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/funcionario/add}"><span>Adicionar</span></a></li>
                     </ul>
                 </li>
                 
                 <li class="collapsed">
-                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i
-                            class="icofont-ticket"></i> <span>Trem</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tren-Components" href="#"><i
+                            class="icofont-tram"></i> <span>Train</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="tikit-Components">
-                        <li><a class="ms-link" href="tickets.html"> <span>Trems</span></a></li>
-                        <li><a class="ms-link" href="ticket-detail.html"> <span>Horario</span></a></li>
-                        <li><a class="ms-link" href="ticket-detail.html"> <span>Estação</span></a></li>
-                        <li><a class="ms-link" href="ticket-detail.html"> <span>Passagens</span></a></li>
-                        <li><a class="ms-link" href="ticket-detail.html"> <span>Reservas</span></a></li>
+                    <ul class="sub-menu collapse" id="tren-Components">
+                        <li><a class="ms-link" th:href="@{/admin/train}"> <span>Trains</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/train/add}"><span>Adicionar</span></a></li>
                     </ul>
                 </li>
                 <li class="collapsed">
-                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i
-                            class="icofont-user-male"></i> <span>Cliente</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#estacao-Components" href="#"><i
+                            class="icofont-archive"></i> <span>Estação</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="client-Components">
-                        <li><a class="ms-link" href="ourclients.html"> <span>Clients</span></a></li>
+                    <ul class="sub-menu collapse" id="estacao-Components">
+                        <li><a class="ms-link" th:href="@{/admin/estacao}"> <span>Estações</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/estacao/add}"><span>Adicionar</span></a></li>
+                    </ul>
+                </li>
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#reserva-Components" href="#"><i
+                            class="icofont-ticket"></i> <span>Reserva</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="reserva-Components">
+                        <li><a class="ms-link" th:href="@{/admin/reserva}"> <span>Reservas</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/reserva/add}"><span>Adicionar</span></a></li>
+                    </ul>
+                </li>
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#rota-Components" href="#"><i
+                            class="icofont-map-pins"></i> <span>Rota</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="rota-Components">
+                        <li><a class="ms-link" th:href="@{/admin/rota}"> <span>Rotas</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/rota/add}"><span>Adicionar</span></a></li>
+                    </ul>
+                </li>
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#rota-Components" href="#"><i
+                            class="icofont-map-pins"></i> <span>horario</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="rota-Components">
+                        <li><a class="ms-link" th:href="@{/admin/horario}"> <span>Hoararios</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/horario/add}"><span>Adicionar</span></a></li>
+                    </ul>
+                </li>
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#passageiro-Components" href="#"><i
+                            class="icofont-user-male"></i> <span>Passageiro</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="passageiro-Components">
+                        <li><a class="ms-link" th:href="@{/admin/passageiro}"> <span>Passageiros</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/passageiro/add}"><span>Adicionar</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -71,9 +106,9 @@
             
             
             <!-- Menu: menu collepce btn -->
-            <button type="button" class="btn btn-link sidebar-mini-btn text-light">
+            <a th:href="@{/logout}"  class="btn btn-link sidebar-mini-btn text-light">
                 <span class="ms-2"><i class="icofont-bubble-right"></i></span>
-            </button>
+            </a>
         </div>
     </div>
 
@@ -95,13 +130,13 @@
                                 <small>Admin Profile</small>
                             </div>
                             <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
-                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile">
+                                <img class="avatar lg rounded-circle img-thumbnail" th:src="@{assets/images/profile_av.png}" alt="profile">
                             </a>
                             <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
                                 <div class="card border-0 w280">
                                     <div class="card-body pb-0">
                                         <div class="d-flex py-1">
-                                            <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile">
+                                            <img class="avatar rounded-circle" th:src="@{assets/images/profile_av.png}" alt="profile">
                                             <div class="flex-fill ms-3">
                                                 <p class="mb-0"><span class="font-weight-bold">Dylan Hunter</span></p>
                                                 <small class="">Dylan.hunter@gmail.com</small>
@@ -111,11 +146,9 @@
                                         <div><hr class="dropdown-divider border-dark"></div>
                                     </div>
                                     <div class="list-group m-2 ">
-                                        <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-tasks fs-5 me-3"></i>My Task</a>
-                                        <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-ui-user-group fs-6 me-3"></i>members</a>
+                                        <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-tasks fs-5 me-3"></i>My Profile</a>
                                         <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-6 me-3"></i>Signout</a>
                                         <div><hr class="dropdown-divider border-dark"></div>
-                                        <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-contact-add fs-5 me-3"></i>Add personal account</a>
                                     </div>
                                 </div>
                             </div>
@@ -461,14 +494,14 @@
 </div>
 
 <!-- Jquery Core Js -->
-<script src="assets/bundles/libscripts.bundle.js"></script>
+<script th:src="@{assets/bundles/libscripts.bundle.js}"></script>
 
 <!-- Plugin Js-->
-<script src="assets/bundles/apexcharts.bundle.js"></script>
+<script th:src="@{assets/bundles/apexcharts.bundle.js}"></script>
 
 <!-- Jquery Page Js -->
-<script src="../js/template.js"></script>
-<script src="../js/page/hr.js"></script>
+<script th:src="@{../js/template.js}"></script>
+<script th:src="@{../js/page/hr.js}"></script>
 </body>
 
 </html> 

@@ -26,7 +26,7 @@ public class Passageiro {
 
 	@ManyToOne
 	@JoinColumn(name = "trem_id")
-	private Tren trem;
+	private Train train;
 
 	public Long getId() {
 		return id;
@@ -60,12 +60,12 @@ public class Passageiro {
 		this.reservas = reservas;
 	}
 
-	public Tren getTrem() {
-		return trem;
+	public Train getTrem() {
+		return train;
 	}
 
-	public void setTrem(Tren trem) {
-		this.trem = trem;
+	public void setTrem(Train train) {
+		this.train = train;
 	}
 	
 	

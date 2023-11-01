@@ -19,11 +19,11 @@ public class PassageiroService {
 		passageiroRepository.save(passageiro);
 	}
 
-	public List<Passageiro> listTrem() {
+	public List<Passageiro> listPassageiro() {
 		return passageiroRepository.findAll();
 	}
 
-	public Passageiro getCampaign(Long id) throws PassageiroNotFundException {
+	public Passageiro getPassageiro(Long id) throws PassageiroNotFundException {
 		Optional<Passageiro> pass = passageiroRepository.findById(id);
 		if (pass.isPresent()) {
 			return pass.get();
@@ -31,7 +31,7 @@ public class PassageiroService {
 		throw new PassageiroNotFundException("Could not find any passageiros with ID" + id);
 	}
 
-	public void deleteTrem(Long id) throws PassageiroNotFundException {
+	public void deletePassageiro(Long id) throws PassageiroNotFundException {
 		Long idPass = passageiroRepository.countById(id);
 		if (idPass == null || idPass == 0) {
 			throw new PassageiroNotFundException("Could not find any passageiros with ID" + id);

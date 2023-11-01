@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.estacao.ferroviaria.exception.FuncionarioNotFundException;
-import com.estacao.ferroviaria.exception.TremNotFundException;
+import com.estacao.ferroviaria.exception.TrainNotFundException;
 import com.estacao.ferroviaria.model.Funcionario;
-import com.estacao.ferroviaria.model.Tren;
+import com.estacao.ferroviaria.model.Train;
 import com.estacao.ferroviaria.repository.FuncionarioRepository;
 
 @Service
@@ -18,7 +18,7 @@ public class FuncionarioService {
 	private FuncionarioRepository funcionarioRepository;
 	
 	
-	public List<Funcionario> list(){
+	public List<Funcionario> listFunc(){
 		return funcionarioRepository.findAll();
 	}
 	
@@ -26,7 +26,7 @@ public class FuncionarioService {
 		funcionarioRepository.save(funcionario);
 	}
 	
-	public Funcionario getCampaign(Long id) throws FuncionarioNotFundException {
+	public Funcionario getFunc(Long id) throws FuncionarioNotFundException {
 		Optional<Funcionario> func = funcionarioRepository.findById(id);
 		if (func.isPresent()) {
 			return func.get();
@@ -34,7 +34,7 @@ public class FuncionarioService {
 		throw new FuncionarioNotFundException("Could not find any trem with ID" + id);
 	}
 
-	public void deleteTrem(Long id) throws FuncionarioNotFundException {
+	public void deleteFunc(Long id) throws FuncionarioNotFundException {
 		Long idFunc = funcionarioRepository.countById(id);
 		if (idFunc == null || idFunc == 0) {
 			throw new FuncionarioNotFundException("Could not find any trem with ID" + id);

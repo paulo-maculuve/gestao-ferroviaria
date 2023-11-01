@@ -20,7 +20,7 @@ public class HorarioService {
 		horarioRepository.save(horario);
 	}
 
-	public List<Horario> listTrem() {
+	public List<Horario> listHorario() {
 		return horarioRepository.findAll();
 	}
 

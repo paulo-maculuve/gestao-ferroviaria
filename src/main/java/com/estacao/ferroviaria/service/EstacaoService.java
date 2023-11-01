@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.estacao.ferroviaria.exception.EstacaoNotFundException;
-import com.estacao.ferroviaria.exception.TremNotFundException;
+import com.estacao.ferroviaria.exception.TrainNotFundException;
 import com.estacao.ferroviaria.model.Estacao;
-import com.estacao.ferroviaria.model.Tren;
+import com.estacao.ferroviaria.model.Train;
 import com.estacao.ferroviaria.repository.EstacaoRepository;
 
 @Service
@@ -21,7 +21,7 @@ public class EstacaoService {
 		estacaoRepository.save(estacao);
 	}
 
-	public List<Estacao> listTrem() {
+	public List<Estacao> listEstacao() {
 		return estacaoRepository.findAll();
 	}
 

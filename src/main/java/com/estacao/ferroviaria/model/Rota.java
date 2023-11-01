@@ -13,6 +13,8 @@ public class Rota {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+	@Column(nullable = false)
+	private String nome;
 	@Column(nullable = false, length = 100)
     private String estacaoPartida;
 	@Column(nullable = false, length = 100)
@@ -23,7 +25,7 @@ public class Rota {
     private int tempoEstimadoViagem;
 
     @OneToMany(mappedBy = "rota")
-    private List<Tren> trens;
+    private List<Train> trens;
 
 	
     public Long getId() {
@@ -66,11 +68,11 @@ public class Rota {
 		this.tempoEstimadoViagem = tempoEstimadoViagem;
 	}
 
-	public List<Tren> getTrens() {
+	public List<Train> getTrens() {
 		return trens;
 	}
 
-	public void setTrens(List<Tren> trens) {
+	public void setTrens(List<Train> trens) {
 		this.trens = trens;
 	}
     

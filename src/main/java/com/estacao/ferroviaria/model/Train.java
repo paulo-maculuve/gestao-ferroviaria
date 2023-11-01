@@ -13,18 +13,15 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-public class Tren {
+public class Train {
 	@Id
 	@GeneratedValue(strategy  = GenerationType.IDENTITY)
 	private Long id;
-//	@Column(nullable = false, length = 50)
-//	private String tipo;
 	@Column(nullable = false)
 	private String numeroIdentificacao;
 	@Column(nullable = false)
 	private int capacidadePassageiros;
 	@OneToMany(mappedBy = "trem")
-	@Column(nullable = false)
 	private List<Horario> horarios;
 	@ManyToOne
 	@JoinColumn(name = "rota_id")
