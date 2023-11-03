@@ -39,6 +39,15 @@
                     </ul>
                 </li>
                 <li  class="collapsed">
+                    <a class="m-link"  data-bs-toggle="collapse" data-bs-target="#usuarios-Components" href="#">
+                        <i class="icofont-briefcase"></i><span>Usuario</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="usuarios-Components">
+                        <li><a class="ms-link" th:href="@{/admin/usuario}"><span>Usuario</span></a></li>
+                        <li><a class="ms-link" th:href="@{/admin/usuario/add}"><span>Adicionar</span></a></li>
+                    </ul>
+                </li>
+                <li  class="collapsed">
                     <a class="m-link"  data-bs-toggle="collapse" data-bs-target="#funcionario-Components" href="#">
                         <i class="icofont-briefcase"></i><span>Funcionario</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
