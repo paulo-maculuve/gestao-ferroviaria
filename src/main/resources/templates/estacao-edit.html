@@ -8,10 +8,10 @@
     <title>Xitimela - Trens | Gestão de Estação Ferroviaria</title>
     <link rel="icon" th:href="@{favicon.ico}" type="image/x-icon"> <!-- Favicon-->
     <!-- plugin css file  -->
-    <link rel="stylesheet" th:href="@{../assets/plugin/datatables/responsive.dataTables.min.css}">
-    <link rel="stylesheet" th:href="@{../assets/plugin/datatables/dataTables.bootstrap5.min.css}">
+    <link rel="stylesheet" th:href="@{../../../assets/plugin/datatables/responsive.dataTables.min.css}">
+    <link rel="stylesheet" th:href="@{../../../assets/plugin/datatables/dataTables.bootstrap5.min.css}">
     <!-- project css file  -->
-    <link rel="stylesheet" th:href="@{../assets/css/my-task.style.min.css}">
+    <link rel="stylesheet" th:href="@{../../../assets/css/my-task.style.min.css}">
 </head>
 
 <body data-mytask="theme-indigo">
@@ -53,19 +53,19 @@
                     </li>
                     
                     <li class="collapsed">
-                        <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#tren-Components" href="#"><i
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tren-Components" href="#"><i
                                 class="icofont-tram"></i> <span>Train</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                         <!-- Menu: Sub menu ul -->
-                        <ul class="sub-menu collapse show" id="tren-Components">
-                            <li><a class="ms-link active" th:href="@{/admin/train}"> <span>Trains</span></a></li>
+                        <ul class="sub-menu collapse" id="tren-Components">
+                            <li><a class="ms-link" th:href="@{/admin/train}"> <span>Trains</span></a></li>
                             <li><a class="ms-link" th:href="@{/admin/train/add}"><span>Adicionar</span></a></li>
                         </ul>
                     </li>
-                    <li class="collapsed">
-                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#estacao-Components" href="#"><i
+                    <li class="collapsed ">
+                        <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#estacao-Components" href="#"><i
                                 class="icofont-archive"></i> <span>Estação</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                         <!-- Menu: Sub menu ul -->
-                        <ul class="sub-menu collapse" id="estacao-Components">
+                        <ul class="sub-menu collapse show" id="estacao-Components">
                             <li><a class="ms-link" th:href="@{/admin/estacao}"> <span>Estações</span></a></li>
                             <li><a class="ms-link" th:href="@{/admin/estacao/add}"><span>Adicionar</span></a></li>
                         </ul>
@@ -90,10 +90,10 @@
                     </li>
                     <li class="collapsed">
                         <a class="m-link" data-bs-toggle="collapse" data-bs-target="#rota-Components" href="#"><i
-                                class="icofont-map-pins"></i> <span>horario</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                                class="icofont-map-pins"></i> <span>Horario</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="rota-Components">
-                            <li><a class="ms-link" th:href="@{/admin/horario}"> <span>Hoararios</span></a></li>
+                            <li><a class="ms-link" th:href="@{/admin/horario}"> <span>Horarios</span></a></li>
                             <li><a class="ms-link" th:href="@{/admin/horario/add}"><span>Adicionar</span></a></li>
                         </ul>
                     </li>
@@ -130,23 +130,24 @@
 
                             <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                                 <div class="u-info me-2">
-                                    <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">Edmundo Gove</span></p>
+                                    <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">Dylan
+                                            Hunter</span></p>
                                     <small>Admin Profile</small>
                                 </div>
                                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button"
                                     data-bs-toggle="dropdown" data-bs-display="static">
                                     <img class="avatar lg rounded-circle img-thumbnail"
-                                        src="../assets/images/profile_av.png" alt="profile">
+                                        src="../../../assets/images/profile_av.png" alt="profile">
                                 </a>
                                 <div
                                     class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
                                     <div class="card border-0 w280">
                                         <div class="card-body pb-0">
                                             <div class="d-flex py-1">
-                                                <img class="avatar rounded-circle" src="../assets/images/profile_av.png"
+                                                <img class="avatar rounded-circle" src="../../../assets/images/profile_av.png"
                                                     alt="profile">
                                                 <div class="flex-fill ms-3">
-                                                    <p class="mb-0"><span class="font-weight-bold">Edmundo Gove</span>
+                                                    <p class="mb-0"><span class="font-weight-bold">Dylan Hunter</span>
                                                     </p>
                                                     <small class="">Dylan.hunter@gmail.com</small>
                                                 </div>
@@ -204,70 +205,46 @@
                         <div class="border-0 mb-4">
                             <div
                                 class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                                <h3 class="fw-bold mb-0">Trains</h3>
-                                <div class="col-auto d-flex w-sm-100">
-                                    <a th:href="@{/admin/train/add}" class="btn btn-dark btn-set-task w-sm-100"><i
-                                            class="icofont-plus-circle me-2 fs-6"></i>Adicionar Train</a>
-                                </div>
+                                <h3 class="fw-bold mb-0">Estação > Adicionar</h3>
+                                
+                            </div>
+                            <div class="">
+                                <form th:action="@{/admin/estacao/save}" method="post" th:object="${estacao}">
+
+                                    <div class="deadline-form">
+
+                                        <div class="row g-3 mb-3">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="mb-3">
+                                                            <input type="hidden" th:field="*{id}">
+                                                            <label for="nome" class="form-label">Nome</label>
+                                                            <input type="text" class="form-control" id="nome"
+                                                                th:field="*{nome}" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="depone" class="form-label">Localização</label>
+                                                            <input type="text" class="form-control" id="depone"
+                                                                th:field="*{localizacaoGeografica}" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <button type="submit"
+                                                                class="btn btn-primary">[[${btnName}]]</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
                             </div>
                         </div>
                     </div> <!-- Row end  -->
-                    <div class="row clearfix g-3">
-                        <div class="col-sm-12">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <table id="myProjectTable" class="table table-hover align-middle mb-0"
-                                        style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Número de Identificação</th>
-                                                <th>Capacidade Passageiros</th>
-                                                <th>Rota</th>
-                                                <th>Distancia da Rota</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <th:block th:each="train : ${listTrain}">
-                                                <tr>
-                                                    <td>
-                                                        <span class="fw-bold">[[${train.id}]]</span>
-                                                    </td>
-                                                    <td>
-                                                        <!-- <img class="avatar rounded-circle" src="../assets/images/xs/avatar1.jpg" alt=""> -->
-                                                        <span
-                                                            class="fw-bold ms-1">[[${train.numeroIdentificacao}]]</span>
-                                                    </td>
-                                                    <td>
-                                                        [[${train.capacidadePassageiros}]]
-                                                    </td>
-                                                    <td>
-                                                        [[${train.rota.nome}]]
-                                                    </td>
-                                                    <td>
-                                                        [[${train.rota.distancia}]] Km
-                                                    </td>
-                                                    <td>
-                                                        <div class="btn-group" role="group"
-                                                            aria-label="Basic outlined example">
-                                                            <a th:href="@{'/admin/train/edit/' + ${train.id}}"
-                                                                class="btn btn-outline-secondary"><i
-                                                                    class="icofont-edit text-success"></i></a>
-                                                            <a href="javascript:void(0)" th:with="id=${train.id}"
-                                                                class="btn btn-outline-secondary" data-bs-toggle="modal"
-                                                                data-bs-target="#deleteTren"><i
-                                                                    class="icofont-ui-delete text-danger"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </th:block>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- Row End -->
+                    
                 </div>
             </div>
 
@@ -285,18 +262,109 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <form th:action="@{'/admin/train/delete/' + ${train.id}}" method="get">
-                                <button type="button" class="btn btn-danger color-fff">Delete</button>
-                            </form>
+                            <button type="button" class="btn btn-danger color-fff">Delete</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Add Department-->
+            <div class="modal fade" id="depadd" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title  fw-bold" id="depaddLabel">Adicionar Tren</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form th:action="@{/train/save}" method="post" th:object="${train}">
+                                <div class="mb-3">
+                                    <input type="hidden" th:field="*{id}">
+                                    <label for="numberId" class="form-label">Número de Identificação</label>
+                                    <input type="text" class="form-control" id="numberId" th:field="*{numeroIdentificacao}" required>
+                                </div>
+                                <div class="deadline-form">
 
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-sm-6">
+                                            <label for="depone" class="form-label">Capacidade</label>
+                                            <input type="number" class="form-control" id="depone" th:field="*{capacidadePassageiros}" required>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="deptwo" class="form-label">Horario de Partida</label>
+                                            <input type="time" class="form-control" id="deptwo" th:field="*{horarios[0].horarioPartida}" required>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="chegada" class="form-label">Horario de Chegada</label>
+                                            <input type="time" class="form-control" id="chegada" th:field="*{horarios[0].horarioChegada}" required>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="deptwo" class="form-label">Atraso</label>
+                                            <input type="number" class="form-control" id="deptwo" th:field="*{horarios[0].atraso}">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="deptwo" class="form-label">Rota</label>
+                                            <select class="form-select" id="example-select" th:field="*{rota}" required>
+                                                <option value="" selected>Select a Rota</option>
+                                                <th:block th:each="rota : ${listRota}">
+                                                    <option th:value="${rota.id}">[[${rota.nome}]]</option>
+                                                </th:block> 
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-
+        <!-- Edit Department-->
+        <div class="modal fade" id="depedit" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title  fw-bold" id="depeditLabel"> Department Edit</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput11111" class="form-label">Department Name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput11111"
+                                value="Web Development">
+                        </div>
+                        <div class="deadline-form">
+                            <form>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Department Head</label>
+                                        <select class="form-select">
+                                            <option selected>Joan Dyer</option>
+                                            <option value="1">Ryan Randall</option>
+                                            <option value="2">Phil Glover</option>
+                                            <option value="3">Victor Rampling</option>
+                                            <option value="4">Sally Graham</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="deptwo48" class="form-label">Employee UnderWork</label>
+                                        <input type="text" class="form-control" id="deptwo48" value="40">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- start: template setting, and more. -->
@@ -304,13 +372,13 @@
     </div>
 
     <!-- Jquery Core Js -->
-    <script th:src="@{../assets/bundles/libscripts.bundle.js}"></script>
+    <script th:src="@{../../../assets/bundles/libscripts.bundle.js}"></script>
 
     <!-- Plugin Js-->
-    <script th:src="@{../assets/bundles/dataTables.bundle.js}"></script>
+    <script th:src="@{../../../assets/bundles/dataTables.bundle.js}"></script>
 
     <!-- Jquery Page Js -->
-    <script th:src="@{../../js/template.js}"></script>
+    <script th:src="@{../../../js/template.js}"></script>
     <script>
         // project data table
         $(document).ready(function () {

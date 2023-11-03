@@ -24,7 +24,7 @@ public class HorarioService {
 		return horarioRepository.findAll();
 	}
 
-	public Horario getCampaign(Long id) throws HorarioNotFundException {
+	public Horario getHorario(Long id) throws HorarioNotFundException {
 		Optional<Horario> horario = horarioRepository.findById(id);
 		if (horario.isPresent()) {
 			return horario.get();
@@ -32,7 +32,7 @@ public class HorarioService {
 		throw new HorarioNotFundException("Could not find any hoarario with ID" + id);
 	}
 
-	public void deleteTrem(Long id) throws HorarioNotFundException {
+	public void deleteHorario(Long id) throws HorarioNotFundException {
 		Long idHorario = horarioRepository.countById(id);
 		if (idHorario == null || idHorario == 0) {
 			throw new HorarioNotFundException("Could not find any hoarario with ID" + id);

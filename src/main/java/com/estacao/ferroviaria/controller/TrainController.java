@@ -35,19 +35,18 @@ public class TrainController {
 	}
 
 	@GetMapping("/train/add")
-	public String showAddCampaign(Model model) {
-		model.addAttribute("train", new Train());
-		List<Rota> list = rotaService.listRota();
-		model.addAttribute("btnName", "Adicionar");
-		model.addAttribute("listRota", list);
-		return "train-add";
+	public String showAddTrain(Model model) {
+	    model.addAttribute("train", new Train());
+	    List<Rota> list = rotaService.listRota();
+	    model.addAttribute("btnName", "Adicionar");
+	    model.addAttribute("listRota", list);
+	    return "train-add";
 	}
 
 	@PostMapping("/train/save")
 	public String saveCampaign(Train train) {
-
 		trainService.save(train);
-		return "redirect:/train";
+		return "redirect:/admin/train";
 	}
 
 	@GetMapping("/train/edit/{id}")
@@ -56,10 +55,10 @@ public class TrainController {
 			Train train = trainService.getTrain(id);
 			model.addAttribute("train", train);
 			model.addAttribute("btnName", "Update");
-            return "train-add";
+            return "train-edit";
 		} catch (TrainNotFundException e) {
 			e.printStackTrace();
-			return "redirect:/train";
+			return "redirect:/admin/train";
 		}
 		
 	}
@@ -71,7 +70,7 @@ public class TrainController {
 		} catch (TrainNotFundException e) {
 			e.printStackTrace();
 		}
-		return "redirect:/train";
+		return "redirect:/admin/train";
 	}
 
 }

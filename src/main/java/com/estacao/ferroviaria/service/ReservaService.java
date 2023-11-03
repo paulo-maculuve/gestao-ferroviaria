@@ -20,11 +20,11 @@ public class ReservaService {
 		reservaRepository.save(reserva);
 	}
 
-	public List<Reserva> listTrem() {
+	public List<Reserva> listReserva() {
 		return reservaRepository.findAll();
 	}
 
-	public Reserva getCampaign(Long id) throws ReservaNotFundException {
+	public Reserva getReserva(Long id) throws ReservaNotFundException {
 		Optional<Reserva> reserva = reservaRepository.findById(id);
 		if (reserva.isPresent()) {
 			return reserva.get();
@@ -32,7 +32,7 @@ public class ReservaService {
 		throw new ReservaNotFundException("Could not find any reserva with ID" + id);
 	}
 
-	public void deleteTrem(Long id) throws ReservaNotFundException {
+	public void deleteReserva(Long id) throws ReservaNotFundException {
 		Long idReserva = reservaRepository.countById(id);
 		if (idReserva == null || idReserva == 0) {
 			throw new ReservaNotFundException("Could not find any reserva with ID" + id);

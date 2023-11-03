@@ -1,5 +1,6 @@
 package com.estacao.ferroviaria.model;
 
+import java.time.LocalTime;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -16,9 +17,9 @@ public class Horario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	@Column(nullable = false)
-    private Date horarioPartida;
+    private LocalTime horarioPartida;
 	@Column(nullable = false)
-    private Date horarioChegada;
+    private LocalTime horarioChegada;
 	@Column(nullable = false)
     private boolean atraso;
 
@@ -34,19 +35,19 @@ public class Horario {
 		this.id = id;
 	}
 
-	public Date getHorarioPartida() {
+	public LocalTime getHorarioPartida() {
 		return horarioPartida;
 	}
 
-	public void setHorarioPartida(Date horarioPartida) {
+	public void setHorarioPartida(LocalTime horarioPartida) {
 		this.horarioPartida = horarioPartida;
 	}
 
-	public Date getHorarioChegada() {
+	public LocalTime getHorarioChegada() {
 		return horarioChegada;
 	}
 
-	public void setHorarioChegada(Date horarioChegada) {
+	public void setHorarioChegada(LocalTime horarioChegada) {
 		this.horarioChegada = horarioChegada;
 	}
 

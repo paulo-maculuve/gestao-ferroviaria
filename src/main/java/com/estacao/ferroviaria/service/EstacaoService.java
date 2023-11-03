@@ -25,7 +25,7 @@ public class EstacaoService {
 		return estacaoRepository.findAll();
 	}
 
-	public Estacao getCampaign(Long id) throws EstacaoNotFundException {
+	public Estacao getEstacao(Long id) throws EstacaoNotFundException {
 		Optional<Estacao> estacao = estacaoRepository.findById(id);
 		if (estacao.isPresent()) {
 			return estacao.get();
@@ -33,7 +33,7 @@ public class EstacaoService {
 		throw new EstacaoNotFundException("Could not find any estacao with ID" + id);
 	}
 
-	public void deleteTrem(Long id) throws EstacaoNotFundException {
+	public void deleteEstacao(Long id) throws EstacaoNotFundException {
 		Long idEstacao = estacaoRepository.countById(id);
 		if (idEstacao == null || idEstacao == 0) {
 			throw new EstacaoNotFundException("Could not find any estacao with ID" + id);
