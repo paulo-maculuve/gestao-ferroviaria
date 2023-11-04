@@ -60,6 +60,8 @@ public class HorarioController {
 		try {
 			Horario horario = horarioService.getHorario(id);
 			model.addAttribute("horario", horario);
+			List<Train> listTrain = trainService.listTrain();
+			model.addAttribute("listTrain", listTrain);
 			model.addAttribute("btnName", "Update");
 			return "horario-edit";
 		} catch (HorarioNotFundException e) {
