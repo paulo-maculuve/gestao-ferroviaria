@@ -3,6 +3,8 @@ package com.estacao.ferroviaria.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.estacao.ferroviaria.exception.RotaNotFundException;
 import com.estacao.ferroviaria.model.Rota;
+import com.estacao.ferroviaria.service.CustomUserDetailsService;
 import com.estacao.ferroviaria.service.RotaService;
 
 @Controller
@@ -20,9 +23,26 @@ public class RotaController {
 
 	@Autowired
 	RotaService rotaService;
+	@Autowired
+	private CustomUserDetailsService customUserDetailsService;
 	
 	@GetMapping("/rota")
 	public String showTrain(Model model) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	String nome; 
+    	String email;
+
+    	if (principal instanceof UserDetails) {
+            UserDetails userDetails = (UserDetails) principal;
+            email = ((UserDetails)principal).getUsername();
+            nome = customUserDetailsService.findUsernameByEmail(email);
+            
+        } else {
+            nome = principal.toString();
+            email = principal.toString();
+        }
+    	model.addAttribute("username", nome);
+    	model.addAttribute("email", email);
 		model.addAttribute("rota", new Rota());
 		List<Rota> listRota = rotaService.listRota();
 		model.addAttribute("listRota", listRota);
@@ -32,6 +52,21 @@ public class RotaController {
 
 	@GetMapping("/rota/add")
 	public String showAddCampaign(Model model) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	String nome; 
+    	String email;
+
+    	if (principal instanceof UserDetails) {
+            UserDetails userDetails = (UserDetails) principal;
+            email = ((UserDetails)principal).getUsername();
+            nome = customUserDetailsService.findUsernameByEmail(email);
+            
+        } else {
+            nome = principal.toString();
+            email = principal.toString();
+        }
+    	model.addAttribute("username", nome);
+    	model.addAttribute("email", email);
 		model.addAttribute("rota", new Rota());
 		model.addAttribute("btnName", "Adicionar");
 		return "rota-add";
@@ -46,6 +81,21 @@ public class RotaController {
 	@GetMapping("/rota/edit/{id}")
 	public String showEditTrain(@PathVariable("id") Long id, Model model) {
 		try {
+			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	    	String nome; 
+	    	String email;
+
+	    	if (principal instanceof UserDetails) {
+	            UserDetails userDetails = (UserDetails) principal;
+	            email = ((UserDetails)principal).getUsername();
+	            nome = customUserDetailsService.findUsernameByEmail(email);
+	            
+	        } else {
+	            nome = principal.toString();
+	            email = principal.toString();
+	        }
+	    	model.addAttribute("username", nome);
+	    	model.addAttribute("email", email);
 			Rota rota = rotaService.getRota(id);
 			model.addAttribute("rota", rota);
 			model.addAttribute("btnName", "Update");

@@ -13,7 +13,7 @@ import com.estacao.ferroviaria.service.CustomUserDetailsService;
 public class MainController {
 	
 	@Autowired
-    private CustomUserDetailsService customUserDetailsService;
+	private CustomUserDetailsService customUserDetailsService;
 	
 	@GetMapping("/admin")
 	public String showHomePage(Model model) {
