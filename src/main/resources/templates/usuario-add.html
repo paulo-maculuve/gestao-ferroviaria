@@ -23,15 +23,7 @@
             <div class="d-flex flex-column h-100">
                 <a th:href="@{/admin}" class="mb-0 brand-icon">
                     <span class="logo-icon">
-                        <svg width="35" height="35" fill="currentColor" class="bi bi-clipboard-check"
-                            viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                            <path
-                                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-                            <path
-                                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
-                        </svg>
+                        <img src="../../assets/images/logo.png" width="100" alt="">
                     </span>
                     <span class="logo-text">Xitimela</span>
                 </a>
@@ -39,7 +31,7 @@
 
                 <ul class="menu-list flex-grow-1 mt-3">
                     <li class="collapsed">
-                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
+                        <a class="m-link " data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
                             <i class="icofont-home fs-5"></i> <span>Dashboard</span> <span
                                 class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                         <!-- Menu: Sub menu ul -->
@@ -47,28 +39,17 @@
                             <li><a class="ms-link" th:href="@{/admin}"> <span>Hr Dashboard</span></a></li>
                         </ul>
                     </li>
-                    <li  class="collapsed">
-                        <a class="m-link active"  data-bs-toggle="collapse" data-bs-target="#usuarios-Components" href="#">
-                            <i class="icofont-briefcase"></i><span>Usuario</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-                        <!-- Menu: Sub menu ul -->
-                        <ul class="sub-menu collapse show" id="usuarios-Components">
-                            <li><a class="ms-link" th:href="@{/admin/usuario}"><span>Usuario</span></a></li>
-                            <li><a class="ms-link active" th:href="@{/admin/usuario/add}"><span>Adicionar</span></a></li>
-                        </ul>
-                    </li>
                     <li class="collapsed">
-                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#funcionario-Components"
-                            href="#">
-                            <i class="icofont-briefcase"></i><span>Funcionario</span> <span
+                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#usuarios-Components" href="#">
+                            <i class="icofont-briefcase"></i><span>Usuario</span> <span
                                 class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                         <!-- Menu: Sub menu ul -->
-                        <ul class="sub-menu collapse" id="funcionario-Components">
-                            <li><a class="ms-link" th:href="@{/admin/funcionario}"><span>Funcionarios</span></a></li>
-                            <li><a class="ms-link" th:href="@{/admin/funcionario/add}"><span>Adicionar</span></a>
-                            </li>
+                        <ul class="sub-menu collapse" id="usuarios-Components">
+                            <li><a class="ms-link" th:href="@{/admin/usuario}"><span>Usuario</span></a></li>
+                            <li><a class="ms-link" th:href="@{/admin/usuario/add}"><span>Adicionar</span></a></li>
                         </ul>
                     </li>
-
+                    
                     <li class="collapsed">
                         <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tren-Components" href="#"><i
                                 class="icofont-tram"></i> <span>Train</span> <span
@@ -119,16 +100,7 @@
                             <li><a class="ms-link" th:href="@{/admin/horario/add}"><span>Adicionar</span></a></li>
                         </ul>
                     </li>
-                    <li class="collapsed">
-                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#passageiro-Components" href="#"><i
-                                class="icofont-user-male"></i> <span>Passageiro</span> <span
-                                class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-                        <!-- Menu: Sub menu ul -->
-                        <ul class="sub-menu collapse" id="passageiro-Components">
-                            <li><a class="ms-link" th:href="@{/admin/passageiro}"> <span>Passageiros</span></a></li>
-                            <li><a class="ms-link" th:href="@{/admin/passageiro/add}"><span>Adicionar</span></a></li>
-                        </ul>
-                    </li>
+                    
                 </ul>
 
 
@@ -150,52 +122,38 @@
 
                         <!-- header rightbar icon -->
                         <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
-
+                        
+                       
                             <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                                 <div class="u-info me-2">
-                                    <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">Edmundo Gove</span></p>
+                                    <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">[[${username}]]</span></p>
                                     <small>Admin Profile</small>
                                 </div>
-                                <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button"
-                                    data-bs-toggle="dropdown" data-bs-display="static">
-                                    <img class="avatar lg rounded-circle img-thumbnail"
-                                        src="../../assets/images/profile_av.png" alt="profile">
+                                <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
+                                    <img class="avatar lg rounded-circle img-thumbnail" th:src="@{../../assets/images/profile_av.png}" alt="profile">
                                 </a>
-                                <div
-                                    class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
+                                <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
                                     <div class="card border-0 w280">
                                         <div class="card-body pb-0">
                                             <div class="d-flex py-1">
-                                                <img class="avatar rounded-circle"
-                                                    src="../../assets/images/profile_av.png" alt="profile">
+                                                <img class="avatar rounded-circle" th:src="@{../../assets/images/profile_av.png}" alt="profile">
                                                 <div class="flex-fill ms-3">
-                                                    <p class="mb-0"><span class="font-weight-bold">Edmundo Gove</span>
-                                                    </p>
-                                                    <small class="">Dylan.hunter@gmail.com</small>
+                                                    <p class="mb-0"><span class="font-weight-bold">[[${username}]]</span></p>
+                                                    <small class="">[[${email}]]</small>
                                                 </div>
                                             </div>
-
-                                            <div>
-                                                <hr class="dropdown-divider border-dark">
-                                            </div>
+                                            
+                                            <div><hr class="dropdown-divider border-dark"></div>
                                         </div>
                                         <div class="list-group m-2 ">
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-tasks fs-5 me-3"></i>My Task</a>
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-ui-user-group fs-6 me-3"></i>members</a>
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-logout fs-6 me-3"></i>Signout</a>
-                                            <div>
-                                                <hr class="dropdown-divider border-dark">
-                                            </div>
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-contact-add fs-5 me-3"></i>Add personal account</a>
+                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-tasks fs-5 me-3"></i>My Profile</a>
+                                            <a th:href="@{/logout}" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-6 me-3"></i>Signout</a>
+                                            <div><hr class="dropdown-divider border-dark"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                           
                         </div>
 
                         <!-- menu toggler -->
@@ -231,69 +189,68 @@
 
                             </div>
                             <div class="">
-                                <form th:action="@{/admin/funcionario/save}" method="post" th:object="${funcionario}">
-
-                                    <div class="deadline-form">
-
-                                        <div class="row g-3 mb-3">
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <div class="col-xl-6">
-                                                        <div class="mb-3">
-                                                            <input type="hidden" th:field="*{id}">
-                                                            <label for="nome" class="form-label">Nome</label>
-                                                            <input type="text" class="form-control" id="nome"
-                                                                th:field="*{nome}" required>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="depone" class="form-label">Cargo</label>
-                                                            <input type="text" class="form-control" id="depone"
-                                                                th:field="*{cargo}" required>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="telefone" class="form-label">Telefone</label>
-                                                            <input type="number" class="form-control" id="telefone"
-                                                                th:field="*{telefone}" required>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-xl-6">
-                                                                <div class="mb-3">
-                                                                    <input type="hidden" th:field="*{id}">
-                                                                    <label for="nome" class="form-label">Estação</label>
-                                                                    <select class="form-select" th:field="*{estacao}" id=""required>
-                                                                        <option value="" selected>Select a Estação</option>
-                                                                        <th:block th:each="estacao : ${listEstacao}">
-                                                                            <option th:value="${estacao.id}">[[${estacao.nome}]]</option>
-                                                                        </th:block>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-6">
-                                                                <div class="mb-3">
-                                                                    <input type="hidden" th:field="*{id}">
-                                                                    <label for="nome" class="form-label">Train de Trabalho</label>
-                                                                    <select class="form-select" th:field="*{train}" id=""required>
-                                                                        <option value="" selected>Select o Train</option>
-                                                                        <th:block th:each="train : ${listTrain}">
-                                                                            <option th:value="${train.id}">[[${train.numeroIdentificacao}]]</option>
-                                                                        </th:block>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <button type="submit"
-                                                                class="btn btn-primary">[[${btnName}]]</button>
-                                                        </div>
-                                                    </div>
+                                <form th:action="@{/admin/usuario/save}" method="post" class="needs-validation" novalidate th:object="${user}">
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <input type="hidden" th:field="*{id}">
+                                            <div class="position-relative mb-3">
+                                                <label for="username" class="form-label">Full Name</label>
+                                                <input type="text" id="username" name="username"
+                                                    class="form-control" placeholder="Enter your full name" th:field="*{nome}"
+                                                    required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
                                                 </div>
+                                                <div class="invalid-tooltip">
+                                                    Please enter full name.
+                                                </div>
+                                            </div>
 
+                                            <div class="position-relative mb-3">
+                                                <label  class="form-label">Email</label>
+                                                <input type="email" name="useremail" class="form-control"
+                                                    placeholder="Enter you Email Address" th:field="*{email}" required>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                                <div class="invalid-tooltip">
+                                                    Please enter Email address.
+                                                </div>
+                                            </div>
+                                            <div class="position-relative mb-3">
+                                                <label  class="form-label">Phone Number</label>
+                                                <input type="tel" name="phone" class="form-control" placeholder="Enter your Phone Number" th:field="*{telefone}" minlength="9" maxlength="12">
 
                                             </div>
+
+                                        </div> <!-- end col-->
+
+                                        <div class="col-xl-6">
+                                            <div class="position-relative mb-3">
+                                                <label for="password" class="form-label">Password</label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="password" id="password" class="form-control"
+                                                        placeholder="Password" name="userpassword" th:field="*{password}" required>
+                                                    <div class="input-group-text" data-password="false">
+                                                        <span class="password-eye"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="valid-tooltip">
+                                                    Looks good!
+                                                </div>
+                                                <div class="invalid-tooltip">
+                                                    Please enter Password.
+                                                </div>
+                                            </div>
+
+                                        </div> <!-- end col-->
+                                        <div class="mb-3">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-account-circle me-2"></i>[[${btnName}]]</button>
                                         </div>
                                     </div>
-
                                 </form>
+
                             </div>
                         </div>
                     </div> <!-- Row end  -->

@@ -23,15 +23,7 @@
             <div class="d-flex flex-column h-100">
                 <a th:href="@{/admin}" class="mb-0 brand-icon">
                     <span class="logo-icon">
-                        <svg width="35" height="35" fill="currentColor" class="bi bi-clipboard-check"
-                            viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                            <path
-                                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-                            <path
-                                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
-                        </svg>
+                        <img src="../../assets/images/logo.png" width="100" alt="">
                     </span>
                     <span class="logo-text">Xitimela</span>
                 </a>
@@ -150,52 +142,38 @@
 
                         <!-- header rightbar icon -->
                         <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
-
+                        
+                       
                             <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                                 <div class="u-info me-2">
-                                    <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">Edmundo Gove</span></p>
+                                    <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">[[${username}]]</span></p>
                                     <small>Admin Profile</small>
                                 </div>
-                                <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button"
-                                    data-bs-toggle="dropdown" data-bs-display="static">
-                                    <img class="avatar lg rounded-circle img-thumbnail"
-                                        src="../../assets/images/profile_av.png" alt="profile">
+                                <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
+                                    <img class="avatar lg rounded-circle img-thumbnail" th:src="@{../../assets/images/profile_av.png}" alt="profile">
                                 </a>
-                                <div
-                                    class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
+                                <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
                                     <div class="card border-0 w280">
                                         <div class="card-body pb-0">
                                             <div class="d-flex py-1">
-                                                <img class="avatar rounded-circle"
-                                                    src="../../assets/images/profile_av.png" alt="profile">
+                                                <img class="avatar rounded-circle" th:src="@{../../assets/images/profile_av.png}" alt="profile">
                                                 <div class="flex-fill ms-3">
-                                                    <p class="mb-0"><span class="font-weight-bold">Edmundo Gove</span>
-                                                    </p>
-                                                    <small class="">Dylan.hunter@gmail.com</small>
+                                                    <p class="mb-0"><span class="font-weight-bold">[[${username}]]</span></p>
+                                                    <small class="">[[${email}]]</small>
                                                 </div>
                                             </div>
-
-                                            <div>
-                                                <hr class="dropdown-divider border-dark">
-                                            </div>
+                                            
+                                            <div><hr class="dropdown-divider border-dark"></div>
                                         </div>
                                         <div class="list-group m-2 ">
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-tasks fs-5 me-3"></i>My Task</a>
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-ui-user-group fs-6 me-3"></i>members</a>
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-logout fs-6 me-3"></i>Signout</a>
-                                            <div>
-                                                <hr class="dropdown-divider border-dark">
-                                            </div>
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
-                                                    class="icofont-contact-add fs-5 me-3"></i>Add personal account</a>
+                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-tasks fs-5 me-3"></i>My Profile</a>
+                                            <a th:href="@{/logout}" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-6 me-3"></i>Signout</a>
+                                            <div><hr class="dropdown-divider border-dark"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                           
                         </div>
 
                         <!-- menu toggler -->

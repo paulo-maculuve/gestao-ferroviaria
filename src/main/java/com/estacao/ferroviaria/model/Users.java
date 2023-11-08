@@ -32,7 +32,7 @@ public class Users {
 	            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
 	    )
 	     
-	     public Set<Roles> roles;
+	     private Set<Roles> roles;
 
 
 	     public Long getId() {
