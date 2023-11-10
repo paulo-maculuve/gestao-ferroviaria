@@ -33,7 +33,7 @@
                     <span class="logo-text">Xitimela</span>
                 </a>
                 <!-- Menu: main ul -->
-    
+
                 <ul class="menu-list flex-grow-1 mt-3">
                     <li class="collapsed">
                         <a class="m-link " data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
@@ -54,7 +54,7 @@
                             <li><a class="ms-link" th:href="@{/admin/usuario/add}"><span>Adicionar</span></a></li>
                         </ul>
                     </li>
-                    
+
                     <li class="collapsed">
                         <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tren-Components" href="#"><i
                                 class="icofont-tram"></i> <span>Train</span> <span
@@ -105,13 +105,13 @@
                             <li><a class="ms-link" th:href="@{/admin/horario/add}"><span>Adicionar</span></a></li>
                         </ul>
                     </li>
-                    
+
                 </ul>
-    
-                
-                
+
+
+
                 <!-- Menu: menu collepce btn -->
-                <a th:href="@{/logout}"  class="btn btn-link sidebar-mini-btn text-light">
+                <a th:href="@{/logout}" class="btn btn-link sidebar-mini-btn text-light">
                     <span class="ms-2"><i class="icofont-bubble-right"></i></span>
                 </a>
             </div>
@@ -127,38 +127,51 @@
 
                         <!-- header rightbar icon -->
                         <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
-                        
-                       
+
+
                             <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                                 <div class="u-info me-2">
-                                    <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">[[${username}]]</span></p>
+                                    <p class="mb-0 text-end line-height-sm "><span
+                                            class="font-weight-bold">[[${username}]]</span></p>
                                     <small>Admin Profile</small>
                                 </div>
-                                <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
-                                    <img class="avatar lg rounded-circle img-thumbnail" th:src="@{../assets/images/profile_av.png}" alt="profile">
+                                <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button"
+                                    data-bs-toggle="dropdown" data-bs-display="static">
+                                    <img class="avatar lg rounded-circle img-thumbnail"
+                                        th:src="@{../assets/images/profile_av.png}" alt="profile">
                                 </a>
-                                <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
+                                <div
+                                    class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
                                     <div class="card border-0 w280">
                                         <div class="card-body pb-0">
                                             <div class="d-flex py-1">
-                                                <img class="avatar rounded-circle" th:src="@{../assets/images/profile_av.png}" alt="profile">
+                                                <img class="avatar rounded-circle"
+                                                    th:src="@{../assets/images/profile_av.png}" alt="profile">
                                                 <div class="flex-fill ms-3">
-                                                    <p class="mb-0"><span class="font-weight-bold">[[${username}]]</span></p>
+                                                    <p class="mb-0"><span
+                                                            class="font-weight-bold">[[${username}]]</span></p>
                                                     <small class="">[[${email}]]</small>
                                                 </div>
                                             </div>
-                                            
-                                            <div><hr class="dropdown-divider border-dark"></div>
+
+                                            <div>
+                                                <hr class="dropdown-divider border-dark">
+                                            </div>
                                         </div>
                                         <div class="list-group m-2 ">
-                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i class="icofont-tasks fs-5 me-3"></i>My Profile</a>
-                                            <a th:href="@{/logout}" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-6 me-3"></i>Signout</a>
-                                            <div><hr class="dropdown-divider border-dark"></div>
+                                            <a href="#" class="list-group-item list-group-item-action border-0 "><i
+                                                    class="icofont-tasks fs-5 me-3"></i>My Profile</a>
+                                            <a th:href="@{/logout}"
+                                                class="list-group-item list-group-item-action border-0 "><i
+                                                    class="icofont-logout fs-6 me-3"></i>Signout</a>
+                                            <div>
+                                                <hr class="dropdown-divider border-dark">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                           
+
                         </div>
 
                         <!-- menu toggler -->
@@ -236,6 +249,40 @@
                                                                 data-bs-target="#deleteTren"><i
                                                                     class="icofont-ui-delete text-danger"></i></a>
                                                         </div>
+                                                        <!-- Modal  Delete Folder/ File-->
+                                                        <div class="modal fade" id="deleteTren" tabindex="-1"
+                                                            aria-hidden="true">
+                                                            <div
+                                                                class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title  fw-bold"
+                                                                            id="deleteprojectLabel"> Delete item
+                                                                            Permanently?</h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div
+                                                                        class="modal-body justify-content-center flex-column d-flex">
+                                                                        <i
+                                                                            class="icofont-ui-delete text-danger display-2 text-center mt-2"></i>
+                                                                        <p class="mt-4 fs-5 text-center">You can only
+                                                                            delete this item Permanently</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">Cancel</button>
+                                                                        <form
+                                                                            th:action="@{'/admin/estacao/delete/' + ${estacao.id}}"
+                                                                            method="get">
+                                                                            <button type="button"
+                                                                                class="btn btn-danger color-fff">Delete</button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </th:block>
@@ -248,27 +295,7 @@
                 </div>
             </div>
 
-            <!-- Modal  Delete Folder/ File-->
-            <div class="modal fade" id="deleteTren" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title  fw-bold" id="deleteprojectLabel"> Delete item Permanently?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body justify-content-center flex-column d-flex">
-                            <i class="icofont-ui-delete text-danger display-2 text-center mt-2"></i>
-                            <p class="mt-4 fs-5 text-center">You can only delete this item Permanently</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <form th:action="@{'/admin/estacao/delete/' + ${estacao.id}}" method="get">
-                                <button type="button" class="btn btn-danger color-fff">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
 
         </div>
