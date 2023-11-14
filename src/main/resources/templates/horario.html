@@ -77,7 +77,6 @@
                         <!-- Menu: Sub menu ul -->
                         <ul class="sub-menu collapse" id="reserva-Components">
                             <li><a class="ms-link" th:href="@{/admin/reserva}"> <span>Reservas</span></a></li>
-                            <!-- <li><a class="ms-link" th:href="@{/admin/reserva/add}"><span>Adicionar</span></a></li> -->
                         </ul>
                     </li>
                     <li class="collapsed">
@@ -91,12 +90,12 @@
                         </ul>
                     </li>
                     <li class="collapsed">
-                        <a class="m-link" data-bs-toggle="collapse" data-bs-target="#rota-Components" href="#"><i
-                                class="icofont-map-pins"></i> <span>Horario</span> <span
+                        <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#horario-Components" href="#"><i
+                                class="icofont-stopwatch"></i> <span>Horario</span> <span
                                 class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                         <!-- Menu: Sub menu ul -->
-                        <ul class="sub-menu collapse" id="rota-Components">
-                            <li><a class="ms-link" th:href="@{/admin/horario}"> <span>Horarios</span></a></li>
+                        <ul class="sub-menu collapse show" id="horario-Components">
+                            <li><a class="ms-link active" th:href="@{/admin/horario}"> <span>Horarios</span></a></li>
                             <li><a class="ms-link" th:href="@{/admin/horario/add}"><span>Adicionar</span></a></li>
                         </ul>
                     </li>

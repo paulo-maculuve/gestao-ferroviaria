@@ -32,6 +32,9 @@ public class HorarioController {
 	@Autowired 
 	private TrainService trainService;
 	
+	@Autowired 
+	private RotaService rotaService;
+	
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
 	
@@ -55,7 +58,9 @@ public class HorarioController {
     	model.addAttribute("username", nome);
     	model.addAttribute("email", email);
 		model.addAttribute("horario", new Horario());
+		List<Train> listTrain = trainService.listTrain();
 		List<Horario> listHorario = horarioService.listHorario();
+		model.addAttribute("listTrain", listTrain);
 		model.addAttribute("listHorario", listHorario);
 
 		return "horario";
