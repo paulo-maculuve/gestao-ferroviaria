@@ -24,7 +24,7 @@ public class UserSecurity {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 		http.authorizeHttpRequests().requestMatchers("/public/**").permitAll()
-		.requestMatchers("/", "/admin/**").authenticated()
+		.requestMatchers("/admin/**").authenticated()
 		.anyRequest().permitAll() 
 		.and().formLogin().loginPage("/login")
 		.defaultSuccessUrl("/")
