@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Xitimela | Gestão de Estação Ferroviaria</title>
+    <link rel="icon" th:href="@{favicon.ico}" type="image/x-icon"> <!-- Favicon-->
+    <!-- project css file  -->
+    <link rel="stylesheet" th:href="@{assets/css/my-task.style.min.css}">
+</head>
+
+<body data-mytask="theme-indigo">
+    <div id="mytask-layout">
+
+        <!-- sidebar -->
+
+
+        <!-- main body area -->
+        <div class="main px-lg-4 px-md-4">
+
+            <!-- Body: Header -->
+
+            <!-- Body: Body -->
+            <div class="body d-flex py-3">
+                <div class="container-xxl">
+                    <div class="row clearfix g-3">
+                        <div class="col-xl-12 col-lg-12 col-md-12 flex-column">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div
+                                            class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+                                            <h6 class="mb-0 fw-bold ">Sistema de Gestão Ferroviaria</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="ac-line-transparent" id="apex-emplyoeeAnalytics">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat modi repellendus quia quo culpa incidunt, sit voluptas dolorem hic repudiandae quidem officiis mollitia fugiat nisi! Excepturi rem consequuntur deleniti!</p>
+                                            <a th:href="@{/reserva/add}" class="btn btn-primary">Fazer reserva</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 pt-4">
+                                <th:block th:each="train : ${listTrain}">
+                                    <div class="col">
+                                        <div class="card">
+                                            <img class="card-img-top" th:src="@{../assets/images/gallery/train.jpg}" alt="" />
+                                            <div class="card-body">
+                                                <h5 class="card-title">[[${train.numeroIdentificacao}]]</h5>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Horario <small
+                                                            class="float-right text-muted">
+                                                            <th:block th:each="horario : ${train.horarios}">
+                                                                [[${horario.horarioPartida}]] - [[${horario.horarioChegada}]]
+                                                            </th:block>
+                                                        </small></h6>
+                                                    <small>[[${train.rota.nome}]]</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th:block>
+                            </div>
+                        </div>
+
+                    </div><!-- Row End -->
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script th:src="@{assets/bundles/libscripts.bundle.js}"></script>
+
+    <!-- Plugin Js-->
+    <script th:src="@{assets/bundles/apexcharts.bundle.js}"></script>
+
+    <!-- Jquery Page Js -->
+    <script th:src="@{../js/template.js}"></script>
+    <script th:src="@{../js/page/hr.js}"></script>
+</body>
+
+</html>
